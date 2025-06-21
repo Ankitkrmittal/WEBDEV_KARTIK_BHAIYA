@@ -1,0 +1,15 @@
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: orange;
+    border: 1px solid black;
+
+    transform: rotateZ(45deg);
+    
+
+}
+
+.box:hover{
+    transform: rotateZ(45deg);
+    transition-delay: 2s;
+}
