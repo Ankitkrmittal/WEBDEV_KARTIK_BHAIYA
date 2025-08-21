@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "../../../htmlprojects"
+		},
+		{
+			"path": "../../../programs"
+		},
+		{
+			"path": "../../../CB WEB D"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../Java"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "CB WEB D",
+		"java.debug.settings.onBuildFailureProceed": true
+	}
+}
