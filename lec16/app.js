@@ -10,8 +10,11 @@ app.get('/greet',(req,res)=>{
 
 })
 // takig data from the client using params
-app.get('/movie/:',(req,res)=>{
-
+app.get('/movie/:name', (req, res) => {
+    const { name } = req.params;
+    res.send(`Hi you want to watch : ${name}`);
 })
 
-app.listen(3333);
+app.listen(3333,()=>{
+    console.log(`http://localhost:3333`)
+});

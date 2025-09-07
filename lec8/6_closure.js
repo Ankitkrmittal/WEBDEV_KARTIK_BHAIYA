@@ -8,5 +8,7 @@ function outer() {
     return inner;
 }
 let fn = outer();
+
+fn();
 fn();
 fn();

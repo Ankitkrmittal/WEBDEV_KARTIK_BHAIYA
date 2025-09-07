@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini IDE</title>
+
+  <!-- CodeMirror CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
+
+  <!-- CodeMirror JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Editors -->
+    <div class="editor-panel">
+      <h2>HTML</h2>
+      <textarea id="html-code"></textarea>
+    </div>
+    <div class="editor-panel">
+      <h2>CSS</h2>
+      <textarea id="css-code"></textarea>
+    </div>
+    <div class="editor-panel">
+      <h2>JavaScript</h2>
+      <textarea id="js-code"></textarea>
+    </div>
+  </div>
+
+  <!-- Preview -->
+  <div class="preview-container">
+    <h2>Live Preview</h2>
+    <iframe id="preview"></iframe>
+  </div>
+
+  <!-- Console -->
+  <div class="console-container">
+    <h2>Console <button id="clear-console">Clear</button></h2>
+    <div id="console-output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

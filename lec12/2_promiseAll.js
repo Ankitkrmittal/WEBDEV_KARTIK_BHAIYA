@@ -15,3 +15,4 @@ Promise.all([p1,p2])
     .catch((err)=>{
         console.log(err)
     }) 
+    

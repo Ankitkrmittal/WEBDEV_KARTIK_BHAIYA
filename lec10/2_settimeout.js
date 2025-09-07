@@ -3,12 +3,12 @@ setTimeout(function () {
 }, 3000);
 
 setTimeout(function () {
-    console.log("I am completed in 2 sec");
+    console.log("f1 I am completed in 2 sec");
 }, 2000);
 
 
 setTimeout(function () {
-    console.log("I am completed in 2 sec");
+    console.log("f2 I am completed in 2 sec");
 }, 2000);
 
 console.log("Hello World");

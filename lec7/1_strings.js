@@ -1,4 +1,4 @@
-'use strinct';
+'use strict';
 let x ="hello"
 console.log(x)
 for(let i=0;i<x.length;i++) {

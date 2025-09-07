@@ -6,3 +6,4 @@ writeFile(filePath,'hello ankit how are you ! whats going on',(err)=>{
     if(err) throw err;
     console.log("file created successfully");
 })
+

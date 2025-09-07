@@ -7,3 +7,4 @@ Car();
 console.log(Car.prototype);
 
 console.log(Car.prototype.__proto__ == Object.prototype);
+console.log(Object.prototype.__proto__);

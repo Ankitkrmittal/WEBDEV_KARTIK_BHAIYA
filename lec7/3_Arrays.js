@@ -5,6 +5,8 @@ for(let i=0;i<arr.length;i++) {
 }
 
 arr.push(10);
+arr.unshift(8);
+arr.shift();
 for(let i=0;i<arr.length;i++) {
     console.log(arr[i]);
 }

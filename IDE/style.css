@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #1e1e1e;
+  }
+  
+  .container {
+    display: flex;
+    flex: 1;
+  }
+  
+  .editor-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #333;
+  }
+  
+  .editor-panel h2 {
+    margin: 0;
+    padding: 8px;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .CodeMirror {
+    flex: 1;
+    height: 100%;
+    font-size: 14px;
+  }
+  
+  .preview-container {
+    height: 40%;
+    border-top: 2px solid #333;
+  }
+  
+  .preview-container h2 {
+    margin: 0;
+    padding: 8px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  #preview {
+    width: 100%;
+    height: calc(100% - 32px);
+    border: none;
+    background: #fff;
+  }
+  
+  .console-container {
+    height: 20%;
+    background: #111;
+    color: #0f0;
+    font-family: monospace;
+    padding: 5px;
+    overflow-y: auto;
+    border-top: 2px solid #333;
+  }
+  
+  .console-container h2 {
+    margin: 0;
+    padding: 8px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #console-output {
+    padding: 5px;
+    white-space: pre-wrap;
+  }
+  
+  #clear-console {
+    background: red;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+  

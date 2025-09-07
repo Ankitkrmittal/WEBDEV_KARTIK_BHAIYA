@@ -1,5 +1,7 @@
 let arr = [1,2,3,4,5]
+console.log(arr);
 //for converting arr into strings
+
 let str = arr.join(' ');
 console.log(str);
 //for converting string into array

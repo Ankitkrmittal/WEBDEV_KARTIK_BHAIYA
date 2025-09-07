@@ -1,6 +1,7 @@
 // hoisting 
 
 helloWorld();
+
 function helloWorld() {
     console.log("HelloWorld");
 }
