@@ -7,7 +7,7 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'static')));
 app.use(express.urlencoded({ extended: true }));
 
-let todos = [
+let Todos = [
     {
         id: 1,
         task: "Buy groceries",
@@ -35,33 +35,59 @@ let todos = [
     }
 ];
 
-app.get('/', (req, res) => {
-    res.render('index', { todos });
+app.get('/', async(req, res) => {
+    try {
+        let todos = await Todos.getTodos();
+        res.render('index', { todos });
+    } catch (error) {
+        res.render('error', {
+            error
+        })
+    }
 })
 
-app.get('/todos/:id', (req, res) => {
+app.get('/todos/:id', async(req, res) => {
     const { id } = req.params;
-    const data = todos.filter(todo => todo.id == +id);
-    res.render('index', {
-        todos: data
-    })
+    // const data = todos.filter(todo => todo.id == +id);
+    try {
+        let data = await Todos.getTodo(id);
+        res.render('index', {
+            todos: data
+        })
+    } catch (error) {
+        res.render('error', {
+            error
+        })
+    }
 })
 
-app.get('/delete-todo/:id', (req, res) => {
+app.get('/delete-todo/:id', async(req, res) => {
     const { id } = req.params;
-    todos = todos.filter(todo => todo.id != +id);
-    res.redirect('/');
+    // todos = todos.filter(todo => todo.id != +id);
+    try {
+        let msg = await Todos.deleteTodo(id);
+        console.log(msg);
+        res.redirect('/');
+    } catch (error) {
+        res.render('error', {
+            error
+        })
+    }
 })
 
-app.post('/todos', (req, res) => {
+app.post('/todos', async(req, res) => {
     const { task, description } = req.body;
-    todos.push({
-        id: uuid(),
-        task,
-        description
-    })
-    console.log(todos);
-    res.redirect('/');
+    try {
+        let msg = await Todos.addTodo(task,description);
+        console.log(msg);
+
+        res.redirect('/');
+    } catch (error) {
+        console.log(error)
+        res.render('error', {
+            error
+        })
+    }
 })
 
 

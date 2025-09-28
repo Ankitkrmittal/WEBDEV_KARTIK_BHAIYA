@@ -5,7 +5,7 @@ app.use(express.urlencoded({extended:true}));
 
 
 app.get('/',(req,res)=>{
-    res.send("failed to get app crashed");
+    res.send("hello ");
 })
 app.get('/greet',(req,res)=>{
     const{name} = req.query;

@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 //jo hum html ka code run krte aye h wo live server ke through run krte h 
-//dusara 
+//dusara  way h express ko use krke 
 const path = require('path')
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'/index.html'))

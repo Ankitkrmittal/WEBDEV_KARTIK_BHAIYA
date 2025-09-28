@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const path = require('path');
 const PORT = 4444;
 
 
@@ -13,5 +12,5 @@ app.get('/',(req,res)=>{
     });
 })
 app.listen(PORT,()=>{
-    console.log(`http:/${PORT}`)
+    console.log(`http://localhost:${PORT}`);
 })
