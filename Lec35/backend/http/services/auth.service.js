@@ -5,6 +5,9 @@ let prisma = new PrismaClient();
 import jwt from 'jsonwebtoken'
 import bcrypt from "bcrypt";
 import evn from "../../env.js";
+
+
+
 export async function signup({email,name,password}){
        let existing = await prisma.user.findUnique({
         where :{email}
@@ -41,3 +44,39 @@ export async function signup({email,name,password}){
             return error;
        }
 }
+
+
+export async function signin({email,password}) {
+    let user = await prisma.user.findUnique({
+        where:{email}
+    })
+    
+    if(!user){
+        let err = new Error("user doesnot exists")
+        res.status= 401;
+        throw err;
+ 
+    }
+    
+    try {
+        const ok = await bcrypt.compare(password,user.password);
+        if(!ok){
+            let err = new Error("incorrect login credentials")
+            res.status=401;
+            throw err
+        } 
+        let token = jwt.sign({name:user.name,email,id:user.id},env.JWT_SECRET);
+        return {
+            user:{
+                id:user.id,
+                name:user.name,
+                email:user.email,
+            },
+            token
+        }
+
+    } catch (error) {
+        return error;
+    }
+}
+
