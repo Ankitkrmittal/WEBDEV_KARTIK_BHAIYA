@@ -4,7 +4,7 @@ import {PrismaClient} from "@prisma/client"
 let prisma = new PrismaClient();
 import jwt from 'jsonwebtoken'
 import bcrypt from "bcrypt";
-import evn from "../../env.js";
+import env from "../../env.js";
 
 
 
@@ -24,9 +24,10 @@ export async function signup({email,name,password}){
         const passwordHash = await bcrypt.hash(password, salt);
         let user = await prisma.user.create({
             data:{
+            name,
             email,
             password:passwordHash,
-            name
+            
         }
         
         })

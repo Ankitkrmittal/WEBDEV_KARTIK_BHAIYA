@@ -5,9 +5,11 @@ import dotenv from 'dotenv'
 import authRoutes from './http/routes/auth.routes.js'
 import env from './env.js'
 const app = express();
-
+app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-
+app.use(cors({
+    origin: env.CORS_ORIGIN
+}));
 const server = http.createServer(app);
 
 app.use('/api/auth',authRoutes)
