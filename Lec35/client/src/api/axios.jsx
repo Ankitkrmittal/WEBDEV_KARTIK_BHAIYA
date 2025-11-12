@@ -1,5 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
-import axios from 'axios'
+import axios from "axios";
+
 export default axios.create({
-    baseURL:"http://localhost:4444",
+  baseURL: "http://localhost:4444",
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
+  },
 });
