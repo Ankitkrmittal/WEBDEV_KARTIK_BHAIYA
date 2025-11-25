@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inp" type="text" placeholder="Enter Name">
+    <button id ="btn">Search </button>
+    <script>
+        let btn = document.getElementById('btn');
+        let inp = document.getElementById('inp');
+
+        function throttling(fn){
+            let iscalled=false;
+            return function(){
+                if(iscalled==true){
+                    return;
+                }
+                
+            
+            btn.setAttribute('disabled',true);
+            iscalled=true;
+            fn();
+            setTimeout(()=>{
+                btn.removeAttribute('disabled');
+                iscalled=false;
+            },3000)
+        }
+    }
+    btn.addEventListener('click',throttling((e)=>{
+        console.log(inp.value);
+    }))
+    </script>
+</body>
+</html>
