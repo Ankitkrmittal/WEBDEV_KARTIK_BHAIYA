@@ -52,4 +52,25 @@ db.create.Collection('marks',{
   db.marks.find().sort({cgpa:-1}).toArray()
 
 
-  
+db.purchase.aggregate([
+    {
+        $lookup:{
+            localField:"_id",
+            from:"orders",
+            foreignField:"userId",
+            as:"placedOrders"
+        }
+    },
+    $match:{
+        placedOrders:{
+            $ne:[]
+        }
+    }
+])
+
+db.matches.aggregate([
+    $lookup:{
+        localField:"playerId",
+        from:"players"
+    }
+])
